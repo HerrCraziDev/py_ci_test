@@ -7,7 +7,9 @@ pipeline {
                 sh """
                 python3 -m venv env'
                 . env/bin/activate'
+                which pip
                 pip install -r requirements.txt
+                which pip
                 """
             }
         }
