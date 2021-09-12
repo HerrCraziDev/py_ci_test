@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage("setup-env") {
             steps {
+                sh 'python -m venv env'
                 sh 'pip install -r requirements.txt'
             }
         }
