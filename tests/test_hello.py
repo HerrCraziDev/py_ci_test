@@ -1,6 +1,6 @@
-
 import pytest
 from greeter.hello import Hello
+
 
 @pytest.mark.unit
 def test_hello():
@@ -10,10 +10,12 @@ def test_hello():
     hello = Hello("user")
     assert hello.name == "user"
 
+
 @pytest.mark.unit
 def test_hello_greeter():
     hello = Hello()
     assert hello.greet() == "Hello World!"
+
 
 @pytest.mark.unit
 def test_hello_set_name():
