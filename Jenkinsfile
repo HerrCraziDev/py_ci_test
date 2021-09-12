@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh """
                 python3 -m venv env'
-                . env/bin/activate'
+                source env/bin/activate'
                 which pip
                 pip install -r requirements.txt
                 which pip
@@ -17,11 +17,11 @@ pipeline {
         stage("linting") {
             steps {
                 sh """
-                . env/bin/activate
+                source env/bin/activate
                 flake8 tests greeter
                 """
                 sh """
-                . env/bin/activate
+                source env/bin/activate
                 black tests greeter
                 """
             }
@@ -30,7 +30,7 @@ pipeline {
         stage("tests") {
             steps {
                 sh """
-                . env/bin/activate
+                source env/bin/activate
                 pytest --cov-report term-missing --cov-branch --cov greeter
                 """
             }
