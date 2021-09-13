@@ -34,13 +34,12 @@ pipeline {
                 pytest --cov-report --junitxml=tests.xml term-missing --cov-branch --cov greeter
                 """
             }
-        }
-        
-        post {
-            always {
-                junit "tests.xml"
+            
+            post {
+                always {
+                    junit "tests.xml"
+                }
             }
         }
     }
-
 }
