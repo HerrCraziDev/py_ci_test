@@ -31,7 +31,7 @@ pipeline {
             steps {
                 sh """
                 . env/bin/activate
-                pytest --cov-report --junitxml=tests.xml term-missing --cov-branch --cov greeter
+                pytest --cov-report term-missing --cov-branch --cov greeter --junitxml=tests.xml
                 """
             }
             
